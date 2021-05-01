@@ -19,7 +19,7 @@ class All_Models:
         self.set_x_and_y()
 
         #uncomment to retrain and save the models
-        self.train_and_save_models()
+        # self.train_and_save_models()
     
     def train_and_save_models(self):
         md.make(self.name_dataset)

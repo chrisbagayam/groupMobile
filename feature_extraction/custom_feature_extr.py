@@ -42,9 +42,9 @@ for s in range(6):
                 count+=1
             d['live'] = 0
             df = df.append(d,ignore_index=True)
-            print(summary(df))
+            
 
-print(df)
+
 df = df.sample(frac=1).reset_index(drop=True)
 
 df.to_csv("../data/clean_dataset.csv", index=False)
