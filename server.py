@@ -21,6 +21,22 @@ def getSummary(name_dataset):
     return dico 
 
 
+@app.route("/noise/<name_dataset>", methods=['GET', 'POST'])
+def getNoise(name_dataset):
+    m = All_Models("data/"+name_dataset+".csv")
+    dico = {
+        "mannathan_distance":m.test_manathan_distance(),
+        "svm": m.test_svn(),
+        "bnn": m.test_bnn(),
+        "knn":m.test_knn(),
+        "decision_tree":m.test_decision_tree()
+    }
+
+    dico = json.dumps(dico)
+
+
+    return dico 
+
 
 if __name__ =="__main__":
     app.run(debug=True)
